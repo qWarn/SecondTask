@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const formData = new FormData(event.target);
       const id = formData.get("id");
 
-      fetch(`http://localhost:8080/students/${id}`, {
+      fetch(`http://localhost:8080/api/students/${id}`, {
         method: "DELETE"
       }).then(response => {
 

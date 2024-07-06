@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   function fetchStudents() {
     console.log("starting fetch")
-    fetch("http://localhost:8080/students")
+    fetch("http://localhost:8080/api/students")
       .then(response => {
         if (!response.ok) {
           console.log(response)

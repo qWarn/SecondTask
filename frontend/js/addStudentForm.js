@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
       group: formData.get('group')
     };
 
-    fetch("http://localhost:8080/students", {
+    fetch("http://localhost:8080/api/students", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'

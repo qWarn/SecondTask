@@ -11,4 +11,4 @@
 **Backend: писал на спринге (kotlin), запросы писал в ручную, используя jdbctemplate, не использовал спринговский ORM(hibernate, data, jpa), мапал в объекты сам.**
 <br/>
 <br/>
-**Frontend: писал на vanilla js.** 
+**Frontend: писал на vanilla js. Фронт доступен по http://localhost:80** 
