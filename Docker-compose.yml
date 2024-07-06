@@ -1,0 +1,32 @@
+version: "3.0"
+
+services:
+  postgres:
+    image: postgres:15.0
+    container_name: postgres
+    restart: always
+    user: postgres
+    volumes:
+      - ./postgres/data:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=second_task_db
+
+  backend:
+    build:
+      dockerfile: backend/Dockerfile
+    container_name: backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
+  frontend:
+    build:
+      dockerfile: frontend/Dockerfile
+    container_name: frontend
+    ports:
+      - "80:80"
+
