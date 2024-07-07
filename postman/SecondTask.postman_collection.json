@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "81e0be8f-77b6-40d3-94a8-a1d84e4b7cac",
+		"name": "SecondTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33947350",
+		"_collection_link": "https://kirilovs.postman.co/workspace/BIT~ee38c973-5b9a-437f-8950-5924bb5bbb5d/collection/33947350-81e0be8f-77b6-40d3-94a8-a1d84e4b7cac?action=share&source=collection_link&creator=33947350"
+	},
+	"item": [
+		{
+			"name": "StudentController",
+			"item": [
+				{
+					"name": "getStudents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.json().length > 0) {\r",
+									"    pm.collectionVariables.set(\"studentId\", pm.response.json()[0].id)\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/students",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addStudent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\",\r\n    \"lastname\": \"lastname\",\r\n    \"surname\": \"surname\",\r\n    \"birthday\": \"2024-12-12\",\r\n    \"group\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/students",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteStudent",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/students/{{studentId}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"students",
+								"{{studentId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		},
+		{
+			"key": "studentId",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
