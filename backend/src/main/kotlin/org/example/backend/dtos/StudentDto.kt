@@ -26,4 +26,3 @@ data class StudentDto(
     @field:NotBlank(message = "Group is required.")
     val group: String?,
 )
-
